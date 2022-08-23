@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">PowerCalc</string>
+    <string name="target_weight_text_view">Target Weight</string>
+    <string name="percentage_text_view">% of Weight</string>
+    <string name="bar_weight_text_view">Bar Weight</string>
+    <string name="per_side_text_view">On Sides</string>
+    <string name="percentage_value_text_view">0</string>
+    <string name="per_side_value_text_view">0</string>
+    <string name="bar_weight_value_text_view">0</string>
+    <string name="target_weight_value_text_view">0</string>
+
+    <string name="fortyfive_lb_plate_string">45 Lbs X </string>
+    <string name="twentyfive_lb_plate_string">25 Lbs X </string>
+    <string name="ten_lbs_plate_string">10 Lbs X </string>
+    <string name="plate_system_message_textview">Based on a 45,25,10,5,2.5 LBS Plate System you
+        will need these plates on each side:</string>
+    <string name="five_lbs_string">05 Lbs X </string>
+    <string name="two_half_string">2.5 Lbs X</string>
+    <string name="zero">0</string>
+</resources>

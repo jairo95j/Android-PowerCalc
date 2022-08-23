@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_weight=".5"
+    tools:context=".CalculatorActivity"
+    android:baselineAligned="false">
+
+    <!-- Linear Layout for the top part On Side and Target Weight-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <!-- On Sides Linear Layout includes both TextViews -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:clickable="true"
+            tools:ignore="NestedWeights">
+
+            <TextView
+                android:id="@+id/per_side_value_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/per_side_value_text_view"
+                android:layout_gravity="center_horizontal"
+                android:textSize="60sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/per_side_text_view"
+                android:id="@+id/per_side_text_view"
+                android:layout_gravity="center_horizontal"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+        <!--End of On Sides Linear Layout -->
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/divider_color" />
+
+    <!-- Target Weight Linear Layout includes both TextViews -->
+        <LinearLayout
+            android:id="@+id/total_weight_layout"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:clickable="true"
+            >
+
+            <TextView
+                android:id="@+id/total_weight_value_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/target_weight_value_text_view"
+                android:layout_gravity="center_horizontal"
+                android:textSize="60sp"/>
+
+            <TextView android:id="@+id/total_weight_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/target_weight_text_view"
+                android:layout_gravity="center_horizontal"
+                android:textSize="15sp"/>
+        </LinearLayout>
+    <!-- End of Target Weight Layout -->
+
+    </LinearLayout> <!-- End of Top Part of OnSides and TargetWeight -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/divider_color" />
+
+    <!-- Start of the Linear Layout that holds Bar Weight and %of Weight -->
+        <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:baselineAligned="false" >
+
+        <!-- Bar Weight Linear Layout that holds two TextViews-->
+            <LinearLayout
+            android:id="@+id/bar_weight_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:clickable="true" >
+
+            <TextView
+                android:id="@+id/bar_weight_value_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bar_weight_value_text_view"
+                android:layout_gravity="center_horizontal"
+                android:textSize="23sp" />
+
+            <TextView
+                android:id="@+id/bar_weight_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bar_weight_text_view"
+                android:layout_gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textIsSelectable="false"/>
+
+        </LinearLayout> <!-- End of BarWeight Linear Layout-->
+
+        <!-- Start of % of Weight LinearLayout that also holds two TextViews -->
+            <LinearLayout
+            android:id="@+id/percentage_weight_layout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/percentage_value_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/percentage_value_text_view"
+                android:layout_gravity="center_horizontal"
+                android:textSize="23sp"/>
+
+            <TextView android:id="@+id/percentage_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/percentage_text_view"
+                android:layout_gravity="center_horizontal"
+                android:textSize="15sp"/>
+
+        </LinearLayout> <!-- End of % of Weight Linear Layout-->
+
+    </LinearLayout> <!-- End of Linear Layout that holds Bottom part of weight calcs -->
+
+    <!-- ** Relative Layout that holds the amount of plates needed to get TargetWeight
+         ** Needs to be Fixed up later should be a list view or Recycler View  -->
+
+    <RelativeLayout
+        android:id="@+id/estimated_plates_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="16dp"
+        android:layout_weight=".5">
+
+        <!-- Brief Message on what is in the Relative Layout -->
+        <TextView
+            android:id="@+id/plate_system_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plate_system_message_textview"
+            android:textSize="18sp"
+            android:paddingBottom="16dp"/>
+
+        <!-- FourtyFive pounds plates TextView-->
+        <TextView
+            android:id="@+id/fortyfive_lb_plate_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/plate_system_message"
+            android:text="@string/fortyfive_lb_plate_string"
+            android:textSize="30sp"/>
+
+        <!-- FourtyFive pounds plates needed TextView-->
+        <TextView
+            android:id="@+id/forty_fiveLbsPlates_needed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/plate_system_message"
+            android:layout_toRightOf="@id/fortyfive_lb_plate_textview"
+            android:text="@string/zero"
+            android:textSize="30sp"/>
+
+        <!-- TwentyFive pounds plates TextView-->
+        <TextView
+            android:id="@+id/twentyfive_lb_plate_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fortyfive_lb_plate_textview"
+            android:text="@string/twentyfive_lb_plate_string"
+            android:textSize="30sp"
+            />
+
+        <!-- TwentyFive pounds plates needed TextView-->
+        <TextView
+            android:id="@+id/twentyFiveLbsPlates_needed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/forty_fiveLbsPlates_needed"
+            android:layout_toRightOf="@id/fortyfive_lb_plate_textview"
+            android:text="@string/zero"
+            android:textSize="30sp"/>
+
+        <!--Ten pounds plates TextView-->
+        <TextView
+            android:id="@+id/ten_lbs_plate_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/twentyfive_lb_plate_text_view"
+            android:text="@string/ten_lbs_plate_string"
+            android:textSize="30sp"/>
+
+        <!-- Ten pounds plates needed TextView-->
+        <TextView
+            android:id="@+id/tenLbsPlates_needed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/twentyFiveLbsPlates_needed"
+            android:layout_toRightOf="@id/fortyfive_lb_plate_textview"
+            android:text="@string/zero"
+            android:textSize="30sp"/>
+
+        <!-- Five pounds plates TextView-->
+        <TextView
+            android:id="@+id/five_lb_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ten_lbs_plate_textview"
+            android:text="@string/five_lbs_string"
+            android:textSize="30sp"/>
+
+        <!-- Five pounds plates needed TextView-->
+        <TextView
+            android:id="@+id/fiveLbsPlates_needed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tenLbsPlates_needed"
+            android:layout_toRightOf="@id/fortyfive_lb_plate_textview"
+            android:text="@string/zero"
+            android:textSize="30sp"/>
+
+        <!-- Two and a half pounds plates TextView-->
+        <TextView
+            android:id="@+id/two_half_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/five_lb_textview"
+            android:text="@string/two_half_string"
+            android:textSize="30sp"/>
+
+        <!-- Amount of Two and a half pounds plates needed TextView-->
+        <TextView
+            android:id="@+id/two_halfLbsPlates_needed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fiveLbsPlates_needed"
+            android:layout_toRightOf="@id/fortyfive_lb_plate_textview"
+            android:text="@string/zero"
+            android:textSize="30sp"/>
+
+    </RelativeLayout> <!-- End of Relative Layout that holds info on plates needed
+                            for target Weight-->
+
+</LinearLayout> <!-- End of parent Linear Layout-->
+
